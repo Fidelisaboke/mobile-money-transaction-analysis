@@ -3,6 +3,13 @@
 This project explores mobile money transaction patterns using machine learning.  
 It includes data preprocessing, feature engineering, modeling, and evaluation using a synthetic dataset resembling real-world financial transactions.
 
+## Table of Contents
+- [Installation and Setup](#installation-and-setup)
+    - [Pre-requisites](#pre-requisites)
+    - [Setup Instructions](#setup-instructions)
+- [Basic Usage](#basic-usage)
+- [Dataset](#dataset)
+
 ## Installation and Setup
 ### Pre-requisites
 - Python 3.12 and above
