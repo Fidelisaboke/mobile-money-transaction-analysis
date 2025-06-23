@@ -1,14 +1,13 @@
-# Mobile Money Transaction Analysis
+# Mobile Money Transaction Analysis with ML
 ## Project Overview
-An ML analysis of mobile money transactions patterns.
+This project explores mobile money transaction patterns using machine learning.  
+It includes data preprocessing, feature engineering, modeling, and evaluation using a synthetic dataset resembling real-world financial transactions.
 
 ## Installation and Setup
 ### Pre-requisites
 - Python 3.12 and above
-- [Synthetic Mobile Money Transaction Dataset (Azamuke, 2024)](https://data.mendeley.com/datasets/zhj366m53p/2):
-    - Visit [this link](https://data.mendeley.com/datasets/zhj366m53p/2) and download
-     `synthetic_mobile_money_transaction_dataset.csv`. Add it to the `data/` directory, and rename
-     it to `transactions.csv` for easy access.
+- [Synthetic Mobile Money Transaction Dataset (Azamuke, 2024)](#dataset)
+
 
 ### Setup Instructions
 1. Clone the repository:
@@ -45,9 +44,13 @@ cd pipeline
 python preprocessing.py
 ```
 
-## Dataset Reference
-We acknowledge the creators of the dataset used in this project:
+## Dataset
+This project uses a synthetic mobile money transaction dataset:
 
-Azamuke, Denish (2024), “[Synthetic Mobile Money Transaction Dataset](https://doi.org/10.17632/zhj366m53p.2)”, *Mendeley Data*, V2, doi: [10.17632/zhj366m53p.2](https://doi.org/10.17632/zhj366m53p.2)
+> **Azamuke, Denish (2024)**, “[Synthetic Mobile Money Transaction Dataset](https://doi.org/10.17632/zhj366m53p.2)”, *Mendeley Data*, V2
 
+To set up the dataset:
 
+1. Download the dataset from [this link](https://data.mendeley.com/datasets/zhj366m53p/2)
+2. Extract and move `synthetic_mobile_money_transaction_dataset.csv` into the `data/` directory
+3. Rename the file to `transactions.csv` for consistency with the codebase
