@@ -13,12 +13,16 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-# Get dataset path from .env
-dataset_path = os.getenv("DATASET_PATH")
+# Get dataset path from .env and concatenate with transactions.csv
+dataset_path = os.path.join(os.getenv("DATASET_PATH"), "transactions.csv")
 
-# Load the dataset
+# Load the dataset 
 logging.info("Loading the dataset...")
-df = pd.read_csv(dataset_path)
+try:
+    df = pd.read_csv(dataset_path)
+except Exception as e:
+    logging.error(f"Error loading dataset: {str(e)}")
+    raise
 
 # Filter out top 1% and bottom 1% from the data
 logging.info("Removing outliers...")
@@ -61,6 +65,6 @@ scaled_df = pd.DataFrame(scaled_data, columns=df.columns)
 # Convert the scaled data to CSV
 logging.info("Feature scaling complete. Generating scaled data CSV...")
 start_time = time.time()
-scaled_df.to_csv('data/scaled_data.csv', index=False)
+scaled_df.to_csv('../data/scaled_data.csv', index=False)
 end_time = time.time() - start_time
 logging.info(f"Scaled data CSV generated in {end_time:.3f} seconds.")

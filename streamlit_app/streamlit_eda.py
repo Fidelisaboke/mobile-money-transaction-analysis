@@ -42,14 +42,19 @@ st.markdown("""
 
 # Load environment variables
 load_dotenv()
-DATASET_PATH = os.getenv("DATASET_PATH", "data/transactions.csv")
+DATASET_PATH = os.getenv("DATASET_PATH", "../data")
 
 # Load dataset with caching
 @st.cache_data
 def load_data(path):
     return pd.read_csv(path)
 
-df = load_data(DATASET_PATH)
+try:
+    df = load_data(os.path.join(DATASET_PATH, 'transactions.csv'))
+    # print(df.head())
+except Exception as e:
+    st.error(f"Error loading data: {str(e)}")
+    st.stop()
 
 # Fix Arrow serialization issues
 object_cols = df.select_dtypes(include='object').columns
